@@ -19,15 +19,16 @@ var svg = d3.select("svg"),
     .attr("x2", 120)
     .attr("y2", 750)
     .attr("stroke-width", 0.5)
-    .attr("stroke", "black");
+    .style("stroke-dasharray", ("3, 3"))
+    .attr("stroke", "gray");
     
     svg.append("line")
     .attr("x1", 300)
     .attr("y1", 0)
     .attr("x2", 300)
     .attr("y2", 750)
-    .attr("stroke-width", 0.5)
-    .attr("stroke", "black");
+    .attr("stroke-width", 0.5).style("stroke-dasharray", ("3, 3"))
+    .attr("stroke", "gray");
     
     svg.append("line")
     .attr("x1", 450)
@@ -35,7 +36,8 @@ var svg = d3.select("svg"),
     .attr("x2", 450)
     .attr("y2", 750)
     .attr("stroke-width", 0.5)
-    .attr("stroke", "black");
+    .style("stroke-dasharray", ("3, 3"))
+    .attr("stroke", "gray");
     
     svg.append("line")
     .attr("x1", 600)
@@ -43,7 +45,8 @@ var svg = d3.select("svg"),
     .attr("x2", 600)
     .attr("y2", 750)
     .attr("stroke-width", 0.5)
-    .attr("stroke", "black");
+    .style("stroke-dasharray", ("3, 3"))
+    .attr("stroke", "gray");
     
 var tree = d3.tree()
     .size([height, width - 160]);
