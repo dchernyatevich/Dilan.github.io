@@ -13,41 +13,18 @@ var svg = d3.select("svg"),
     height = +svg.attr("height"),
     g = svg.append("g").attr("transform", "translate(40,0)");
     
+// split generation
+[120, 300, 450, 600].forEach(function(v) {
     svg.append("line")
-    .attr("x1", 120)
-    .attr("y1", 0)
-    .attr("x2", 120)
-    .attr("y2", 750)
-    .attr("stroke-width", 0.5)
-    .style("stroke-dasharray", ("3, 3"))
-    .attr("stroke", "gray");
-    
-    svg.append("line")
-    .attr("x1", 300)
-    .attr("y1", 0)
-    .attr("x2", 300)
-    .attr("y2", 750)
-    .attr("stroke-width", 0.5).style("stroke-dasharray", ("3, 3"))
-    .attr("stroke", "gray");
-    
-    svg.append("line")
-    .attr("x1", 450)
-    .attr("y1", 0)
-    .attr("x2", 450)
-    .attr("y2", 750)
-    .attr("stroke-width", 0.5)
-    .style("stroke-dasharray", ("3, 3"))
-    .attr("stroke", "gray");
-    
-    svg.append("line")
-    .attr("x1", 600)
-    .attr("y1", 0)
-    .attr("x2", 600)
-    .attr("y2", 750)
-    .attr("stroke-width", 0.5)
-    .style("stroke-dasharray", ("3, 3"))
-    .attr("stroke", "gray");
-    
+        .attr("x1", v)
+        .attr("y1", 0)
+        .attr("x2", v)
+        .attr("y2", 750)
+        .attr("stroke-width", 0.5)
+        .style("stroke-dasharray", ("3, 3"))
+        .attr("stroke", "gray");
+});
+
 var tree = d3.tree()
     .size([height, width - 160]);
 
@@ -70,9 +47,11 @@ d3.json("tree/flare.json", function(error, data) {
     .enter().append("g")
       .attr("class", function(d) { return "node" + (d.children ? " node--internal" : " node--leaf"); })
       .attr("transform", function(d) { return "translate(" + d.y + "," + d.x + ")"; })
+      .on("click", function(d) {  });
 
   node.append("circle")
-      .attr("r", 2.5);
+      .attr("r", 2.5)
+      .style("fill", function(d) { return d.children ? "lightsteelblue" : "#fff"; })
 
   var tt = node.append("text")
       .attr("dy", 0)
