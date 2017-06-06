@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
-<svg width="800" height="600" style="padding-left:150px"></svg>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
 <link type="text/css" rel="stylesheet" href="tree/style.v2.css"/>
+
+<svg width="800" height="600" style="padding-left:50px"></svg>
+
 <script src="/tree/d3.v4.min.js"></script>
 <script>
 // https://bl.ocks.org/mbostock/4339184
@@ -11,11 +13,41 @@ var svg = d3.select("svg"),
     height = +svg.attr("height"),
     g = svg.append("g").attr("transform", "translate(40,0)");
     
+    svg.append("line")
+    .attr("x1", 120)
+    .attr("y1", 0)
+    .attr("x2", 120)
+    .attr("y2", 750)
+    .attr("stroke-width", 0.5)
+    .attr("stroke", "black");
+    
+    svg.append("line")
+    .attr("x1", 300)
+    .attr("y1", 0)
+    .attr("x2", 300)
+    .attr("y2", 750)
+    .attr("stroke-width", 0.5)
+    .attr("stroke", "black");
+    
+    svg.append("line")
+    .attr("x1", 450)
+    .attr("y1", 0)
+    .attr("x2", 450)
+    .attr("y2", 750)
+    .attr("stroke-width", 0.5)
+    .attr("stroke", "black");
+    
+    svg.append("line")
+    .attr("x1", 600)
+    .attr("y1", 0)
+    .attr("x2", 600)
+    .attr("y2", 750)
+    .attr("stroke-width", 0.5)
+    .attr("stroke", "black");
+    
 var tree = d3.tree()
     .size([height, width - 160]);
 
-var stratify = d3.stratify()
-    .parentId(function(d) { return d.data.id; });
 
 d3.json("tree/flare.json", function(error, data) {
     
