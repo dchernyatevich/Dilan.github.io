@@ -80,7 +80,10 @@
               ]
             }
           ],
+          "select": true,
           "style": {
+            "font-size": "15",
+            "font-weight": "bold",  
             "stroke": "#DE00FF"
           }
         }
@@ -123,7 +126,7 @@
               ]
             },
             {
-              "name": "Ludmiła Wolańska +",
+              "name": "Ludmiła Wolańska + Sergiej Lisowski",
               "select": true,
               "style": {
                 "font-size": "15",
@@ -132,19 +135,19 @@
               },
               "children": [
                 {
-                  "name": "",
+                  "name": "Andrzej",
                   "style": {
                     "stroke": "#00FF00"
                   }
                 },
                 {
-                  "name": "",
+                  "name": "Vład",
                   "style": {
                     "stroke": "#00FF00"
                   }
                 },
                 {
-                  "name": "",
+                  "name": "Anastazja",
                   "style": {
                     "stroke": "#00FF00"
                   }
@@ -160,13 +163,15 @@
           },
           "children": [
             {
-              "name": "Slawa",
+              "_name_": "Slawa",
+              "name": "",
               "style": {
                 "stroke": "#00FF00"
               }
             },
             {
-              "name": "Katarzyna",
+              "_name_": "Katarzyna",
+              "name": "",
               "style": {
                 "stroke": "#00FF00"
               }
@@ -229,7 +234,7 @@
           ]
         },
         {
-          "name": "Włodzimierz Kuczyński + ",
+          "name": "Włodzimierz Kuczyński +",
           "select": true,
           "style": {
             "font-size": "15",
@@ -244,13 +249,6 @@
               }
             }
           ]
-        },
-        {
-          "name": "Aleksandr Kuczyński",
-          "style": {
-            "stroke": "#00F"
-          },
-          "children": []
         },
         {
           "name": "Maria Kuczyńska",
@@ -276,8 +274,7 @@
         "font-size": "14",
         "font-weight": "bold",
         "stroke-width": "2.5px",
-        "stroke": "#F00",
-        "stroke-dasharray": "4,1,4"
+        "stroke": "#F00"
       },
       "children": [
         {
@@ -298,19 +295,17 @@
           "name": "Aleksandr Kolesnikow",
           "style": {
             "stroke-width": "2.5px",
-            "stroke": "#F00",
-            "stroke-dasharray": "4"
+            "stroke": "#F00"
           },
           "children": [
             {
-              "name": "Julia Kolesnikowa +",
+              "name": "Julia Kolesnikowa + +",
               "select": true,
               "style": {
                 "font-weight": "bold",
                 "font-size": "15",
                 "stroke-width": "2.5px",
-                "stroke": "#F00",
-                "stroke-dasharray": "4"
+                "stroke": "#F00"
               },
               "children": [
                 {
@@ -320,12 +315,6 @@
                   }
                 }
               ]
-            },
-            {
-              "name": "Aleksandr",
-              "style": {
-                "stroke": "#F00"
-              }
             }
           ]
         }

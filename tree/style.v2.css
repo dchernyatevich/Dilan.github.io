@@ -6,6 +6,10 @@
   font: 13px sans-serif;
 }
 
+.contacts text {
+  font: 13px sans-serif;
+}
+
 .node--internal circle {
   fill: #555;
 }
