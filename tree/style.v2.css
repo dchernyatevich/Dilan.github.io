@@ -3,7 +3,7 @@
 }
 
 .node text {
-  font: 11px sans-serif;
+  font: 13px sans-serif;
 }
 
 .node--internal circle {
@@ -18,5 +18,5 @@
   fill: none;
   stroke: #555;
   stroke-opacity: 0.4;
-  stroke-width: 1.5px;
+  stroke-width: 2.0px;
 }
