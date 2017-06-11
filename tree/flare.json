@@ -95,7 +95,10 @@
       "children": [
         {
           "name": "Wiktor Wolański + Raisa",
+          "select": true,
           "style": {
+            "font-size": "15",
+            "font-weight": "bold",  
             "stroke": "#00FF00"
           },
           "children": [
@@ -107,7 +110,10 @@
             },
             {
               "name": "Ludmiła Wolańska +",
+              "select": true,
               "style": {
+                "font-size": "15",
+                "font-weight": "bold",
                 "stroke": "#00FF00"
               },
               "children": [
@@ -210,7 +216,10 @@
         },
         {
           "name": "Włodzimierz Kuczyński + ",
+          "select": true,
           "style": {
+            "font-size": "15",
+            "font-weight": "bold",
             "stroke": "#00F"
           },
           "children": [
@@ -248,7 +257,9 @@
     {
       "name": "Kazimiera Kuczyńska (1931) + Garold Kolesnikow",
       "name_ru": "Казимира Кучинская + Гарольд Колесников",
+      "select": true,
       "style": {
+        "font-size": "14",
         "font-weight": "bold",
         "stroke-width": "2.5px",
         "stroke": "#F00",
@@ -279,8 +290,10 @@
           "children": [
             {
               "name": "Julia Kolesnikowa +",
+              "select": true,
               "style": {
                 "font-weight": "bold",
+                "font-size": "15",
                 "stroke-width": "2.5px",
                 "stroke": "#F00",
                 "stroke-dasharray": "4"

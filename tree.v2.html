@@ -3,7 +3,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
 <link type="text/css" rel="stylesheet" href="tree/style.v2.css"/>
 
-<svg width="900" height="700" style="padding-left:50px"></svg>
+<svg width="950" height="700" style="padding-left:50px"></svg>
 
 <script src="/tree/d3.v4.min.js"></script>
 <script>
@@ -14,14 +14,14 @@ var svg = d3.select("svg"),
     g = svg.append("g").attr("transform", "translate(40,0)");
     
 // split generation
-[120, 320, 500, 710].forEach(function(v) {
+[130, 340, 550, 740].forEach(function(v) {
     svg.append("line")
         .attr("x1", v)
         .attr("y1", 0)
         .attr("x2", v)
         .attr("y2", 750)
-        .attr("stroke-width", 0.5)
-        .style("stroke-dasharray", ("3, 3"))
+        .style("stroke-width", 0.2)
+        .style("stroke-dasharray", ("1,8,1"))
         .attr("stroke", "gray");
 });
 
@@ -34,8 +34,12 @@ d3.json("tree/flare.json", function(error, data) {
   var root = d3.hierarchy(data)
   if (error) throw error;
   
+  var tdata = tree(root).links();
+  
+  // console.log(tdata)
+  
   var link = g.selectAll(".link")
-    .data(tree(root).links())
+    .data(tdata)
     .enter().append("path")
       .attr("class", "link")
       .style("stroke-width", function(d) {
@@ -64,6 +68,20 @@ d3.json("tree/flare.json", function(error, data) {
   node.append("circle")
       .attr("r", 2.5)
       .style("fill", function(d) { return d.children ? "lightsteelblue" : "#fff"; })
+  
+  node.append("rect")
+      .attr("x", -98)
+      .attr("rx", 5)
+      .attr("ry", 5)
+      .attr("y", -20)
+      .attr("width", 195)
+      .attr("fill-opacity", 0.6)
+      .attr("height", function(d) {
+          return d.data.select ? 30 : 0;
+      })
+      .style("fill", function(d) { return "lightsteelblue" })
+      .style("stroke-width", 1)
+      .style("stroke", "#000")
 
   var tt = node.append("text")
       .attr("dy", 0)
@@ -72,12 +90,13 @@ d3.json("tree/flare.json", function(error, data) {
       /* .text(function(d) { console.log(d); return d.data.name }); */
   
   node.append("text")       
-    .each(function (d) {
+    .each(function (d, i) {
         var arr = d.data.name.split("+");
-        var fontWeight = d.data.style && d.data.style['font-weight'] ? "bold" : "none";
+        var fontWeight = d.data.style && d.data.style['font-weight'] ? d.data.style['font-weight'] : "none";
+        var fontSize = d.data.style && d.data.style['font-size'] ? d.data.style['font-size'] : "none";
         
         for (i = 0; i < arr.length; i++) {
-            if (arr.length > 1) { fontWeight = i ==0 ? "bold" : "none"; }
+            if (fontWeight == 'bold' && arr.length > 1) { fontWeight = i ==0 ? "bold" : "none"; }
             
             d3.select(this).append("tspan")
                 .text(arr[i])
@@ -85,8 +104,11 @@ d3.json("tree/flare.json", function(error, data) {
                 .attr("x", 0)
                 .attr("text-anchor", "middle")
                 .style("font-weight", fontWeight)
+                .style("font-size", fontSize)
                 .attr("class", "tspan" + i);
         }
     });
+    
+    
 });
 </script>
