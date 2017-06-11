@@ -94,13 +94,11 @@ d3.json("tree/flare.json", function(error, data) {
     });
     
     // split generation
-    var link = g.selectAll("line.split")
+    var link = g.selectAll("path.split")
       .data([90, 280, 510, 710])
-      .enter().append("line")
-      .attr("x1", function(v) { return v; })
-      .attr("y1", 0)
-      .attr("x2", function(v) { return v; })
-      .attr("y2", 750)
+      .enter().append("path")
+      .attr("d", function(v) { return 'M ' + v + ' 0 L  ' + v + ' 700'; })
+      .style("fill", "none")
       .style("stroke-width", 0.2)
       .style("stroke-dasharray", ("1,8,1"))
       .attr("stroke", "gray");
