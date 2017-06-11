@@ -14,32 +14,16 @@ var svg = d3.select("svg"),
     g = svg.append("g").attr("transform", "translate(40,0)");
     
 // split generation
-[130, 340, 550, 740].forEach(function(v) {
-    svg.append("line")
-        .attr("x1", v)
-        .attr("y1", 0)
-        .attr("x2", v)
-        .attr("y2", 750)
-        .style("stroke-width", 0.2)
-        .style("stroke-dasharray", ("1,8,1"))
-        .attr("stroke", "gray");
-});
-
 var tree = d3.tree()
     .size([height, width - 160]);
-
 
 d3.json("tree/flare.json", function(error, data) {
     
   var root = d3.hierarchy(data)
   if (error) throw error;
   
-  var tdata = tree(root).links();
-  
-  // console.log(tdata)
-  
   var link = g.selectAll(".link")
-    .data(tdata)
+    .data(tree(root).links())
     .enter().append("path")
       .attr("class", "link")
       .style("stroke-width", function(d) {
@@ -109,6 +93,17 @@ d3.json("tree/flare.json", function(error, data) {
         }
     });
     
-    
+    // split generation
+    var link = g.selectAll("line.split")
+      .data([90, 280, 510, 710])
+      .enter().append("line")
+      .attr("x1", function(v) { return v; })
+      .attr("y1", 0)
+      .attr("x2", function(v) { return v; })
+      .attr("y2", 750)
+      .style("stroke-width", 0.2)
+      .style("stroke-dasharray", ("1,8,1"))
+      .attr("stroke", "gray");
+      
 });
 </script>

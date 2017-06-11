@@ -103,10 +103,24 @@
           },
           "children": [
             {
-              "name": "Wolimir Wolański",
+              "name": "Włodzimierz Wolański",
               "style": {
                 "stroke": "#00FF00"
-              }
+              },
+              "children": [
+                {
+                  "name": "",
+                  "style": {
+                    "stroke": "#00FF00"
+                  }
+                },
+                {
+                  "name": "",
+                  "style": {
+                    "stroke": "#00FF00"
+                  }
+                }
+              ]
             },
             {
               "name": "Ludmiła Wolańska +",
